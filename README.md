@@ -79,12 +79,12 @@ reflection.md      — design decisions and AI collaboration notes
 
 PawPal+ goes beyond a simple task list with four algorithmic features:
 
-| Feature | Method | How it works |
-|---|---|---|
-| **Sort by time** | `Scheduler.sort_by_time()` | `sorted()` with `lambda pair: pair[1].time` on HH:MM strings |
-| **Filter tasks** | `Scheduler.filter_by_pet()` / `filter_by_status()` | Composable list comprehensions; accept an optional task list so filters chain |
-| **Recurring tasks** | `Task.mark_complete()` + `Scheduler.mark_task_complete()` | Returns a new Task with `due_date + timedelta(days=1 or weeks=1)` and auto-appends it to the pet |
-| **Conflict detection** | `Scheduler.detect_conflicts()` | Dict-based O(n) scan; returns warning strings instead of raising exceptions |
+| Feature                | Method                                                    | How it works                                                                                     |
+| ---------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| **Sort by time**       | `Scheduler.sort_by_time()`                                | `sorted()` with `lambda pair: pair[1].time` on HH:MM strings                                     |
+| **Filter tasks**       | `Scheduler.filter_by_pet()` / `filter_by_status()`        | Composable list comprehensions; accept an optional task list so filters chain                    |
+| **Recurring tasks**    | `Task.mark_complete()` + `Scheduler.mark_task_complete()` | Returns a new Task with `due_date + timedelta(days=1 or weeks=1)` and auto-appends it to the pet |
+| **Conflict detection** | `Scheduler.detect_conflicts()`                            | Dict-based O(n) scan; returns warning strings instead of raising exceptions                      |
 
 ## Testing PawPal+
 
@@ -93,6 +93,7 @@ python -m pytest
 ```
 
 The test suite (`tests/test_pawpal.py`) covers:
+
 - Task completion status changes
 - Daily / weekly recurrence produces correct next due dates
 - Task addition increases a pet's task count
@@ -106,4 +107,4 @@ The test suite (`tests/test_pawpal.py`) covers:
 
 ## 📸 Demo
 
-<a href="/course_images/ai110/pawpal_screenshot.png" target="_blank"><img src='/course_images/ai110/pawpal_screenshot.png' title='PawPal App' width='' alt='PawPal App' class='center-block' /></a>
+<a href="pawpal.png" target="_blank"><img src='/course_images/ai110/pawpal_screenshot.png' title='PawPal App' width='' alt='PawPal App' class='center-block' /></a>
