@@ -1,0 +1,12 @@
+{
+  "owner": {
+    "name": "Rahat",
+    "pets": [
+      {
+        "name": "Winston",
+        "species": "dog",
+        "tasks": []
+      }
+    ]
+  }
+}

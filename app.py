@@ -136,8 +136,10 @@ def render_task_card(pet: Pet, task: Task, show_pet: bool = True) -> None:
 
 
 # ── Main header ────────────────────────────────────────────────────────────────
-st.title(f"🐾 PawPal+ &nbsp; <small style='font-size:0.55em;color:#888'>for {owner.name}</small>",
-         )
+st.markdown(
+    f"# 🐾 PawPal+ &nbsp; <small style='font-size:0.55em;color:#888'>for {owner.name}</small>",
+    unsafe_allow_html=True,
+)
 st.caption(f"Today is {date.today().strftime('%A, %B %d %Y')}")
 
 # ── Tabs ───────────────────────────────────────────────────────────────────────
